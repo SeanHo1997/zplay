@@ -1,0 +1,16 @@
+{
+  "name": "zplay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev:h5": "uni",
+    "build:h5": "uni build"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "postcss-px-to-viewport": "^1.1.1"
+  }
+}
+
