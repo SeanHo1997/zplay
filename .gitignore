@@ -9,6 +9,9 @@ yarn.lock
 unpackage/
 dist/
 
+# 允许提交 unpackage/dist/build/web
+!unpackage/dist/build/web/
+
 # IDE
 .vscode/
 .idea/
