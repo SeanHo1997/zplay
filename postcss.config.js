@@ -1,17 +1,14 @@
 module.exports = {
   plugins: {
     'postcss-px-to-viewport': {
-      viewportWidth: 393, // 设计稿宽度，根据你的设计稿调整
-      viewportHeight: 852, // 设计稿高度，可选
-      unitPrecision: 3, // 转换后的精度，即小数点位数
-      viewportUnit: 'vw', // 指定需要转换成的视窗单位，默认vw
-      selectorBlackList: ['.ignore', '.hairlines'], // 指定不转换为视窗单位的类，可以自定义，可以无限添加,建议定义一至两个通用的类名
-      minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值
-      mediaQuery: false, // 允许在媒体查询中转换`px`
-      exclude: [/node_modules/], // 设置忽略文件，用正则做目录名匹配
-      landscape: false, // 是否添加根据 landscapeWidth 生成的媒体查询条件 @media (orientation: landscape)
-      landscapeUnit: 'vw', // 横屏时使用的单位
-      landscapeWidth: 1134 // 横屏时使用的视口宽度
+      viewportWidth: 394, // 你的设计稿宽度
+      viewportHeight: 852, // 你的设计稿高度
+      unitPrecision: 3, // 小数点精度
+      viewportUnit: 'rpx', // 转换为 rpx（关键修改）
+      selectorBlackList: ['.ignore', '.hairlines'], // 不转换的类
+      minPixelValue: 1, // 小于等于1px不转换
+      mediaQuery: false,
+      exclude: [/node_modules/]
     }
   }
 }
