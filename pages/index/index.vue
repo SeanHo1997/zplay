@@ -22,10 +22,13 @@
 		
 		<view v-if="isAvatarActive" class="dark-overlay"></view>
 
+		<!-- avatar -->
 		<view
-			class="avatar-container">
+			class="avatar-container"
+			v-show="!showShopList"
+		>
 			<image
-				src="/static/images/cake.svg" 
+				src="/static/images/cake.svg"
 				mode="aspectFit" 
 				id="avatar"
 				@tap="toggleAvatar"
@@ -180,7 +183,7 @@
 <style scoped>
 	.content {
 		position: relative;
-		min-height: 100vh;
+		max-height: 100vh;
 		width: 100%;
 	}
 	
@@ -482,4 +485,5 @@
 		min-width: 40px;
 		text-align: right;
 	}
+
 </style>
