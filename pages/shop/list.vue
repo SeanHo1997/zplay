@@ -69,9 +69,9 @@
 		},
 		methods: {
 			handleShopClick(shop) {
-				uni.navigateTo({
-					url: `/pages/shop/detail?id=${shop.id}`
-				});
+				// uni.navigateTo({
+				// 	url: `/pages/shop/detail?id=${shop.id}`
+				// });
 			}
 		}
 	}
@@ -97,7 +97,7 @@
 .pin-icon {
 	position: absolute;
 	right: 21px;
-	top: 30px;
+	top: 21px;
 	width: 40px;
 	height: 40px;
 }
@@ -108,16 +108,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 80px 0;
+	padding: 70px 0;
 	box-sizing: border-box;
-	gap: 10px;
+	gap: 30px;
 }
 
 .next-page-arrow {
 	position: absolute;
   left: 50%;
   transform: translateX(-50%);
-	bottom: 30px;
+	bottom: 10px;
 	width: 50px;
 	height: 50px;
 	animation: float-down 2s ease-in-out infinite;

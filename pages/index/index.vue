@@ -141,6 +141,7 @@
 				isAvatarActive: false,
 				isPressing: false,
 				showPanel: false,
+				showShopList: false, // 店铺列表显示状态（已移动到独立页面，默认不显示）
 				animationSpeeds: {
 					shake1: 6,
 					shake2: 5.5,

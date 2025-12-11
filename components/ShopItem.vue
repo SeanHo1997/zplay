@@ -1,6 +1,8 @@
 <template>
 	<view class="shop-item" @tap="handleClick">
 		<view class="shop-card" :class="orderClass">
+			<view v-if="first" class="first-bg-shadow"></view>
+			<view v-else class="other-bg-shadow"></view>
 			<view class="shop-body">
 				<view class="shop-image">
 					<image src="/static/images/shop-avatar.svg" mode="aspectFill" class="image"></image>
@@ -81,15 +83,44 @@ export default {
 }
 
 .shop-card {
+  position: relative;
   width: 100%;
   height: 156px;
 	border-radius: 12px;
-	overflow: hidden;
+	overflow: visible;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .first-style .shop-body {
-	background-color: #A0522D;
+  border: 2px solid #FFDC81;
+}
+
+.first-bg-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background-image: url("~@/static/images/first-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(6px, 6px);
+  z-index: 0;
+}
+
+.other-bg-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background-color: #FFBDC4;
+  transform: translate(6px, 6px);
+  z-index: 0;
+}
+
+.first-style .shop-body {
+	background-image: url("~@/static/images/first-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .other-than-first-style .shop-body {
@@ -97,8 +128,11 @@ export default {
 }
 
 .shop-body {
+	position: relative;
 	display: flex;
   height: 100%;
+  border-radius: 12px;
+  z-index: 1;
 }
 
 .image {
@@ -121,7 +155,7 @@ export default {
 }
 
 .first-style .shop-name {
-	color: #FFF;
+	color: #FFDC81;
 }
 
 .shop-rating {
@@ -137,7 +171,7 @@ export default {
 }
 
 .first-style .rating-text {
-	color: #FFF;
+	color: #FFDC81;
 }
 
 .stars {
@@ -154,6 +188,19 @@ export default {
 	margin-bottom: 8px;
 	display: inline-block;
 	color: #666;
+  /* color: #FF5756; */
+
+}
+
+.first-style .shop-tag {
+  width: fit-content;
+	font-size: 12px;
+	background-color: #FFEAAE;
+	padding: 4px 6px;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	display: inline-block;
+	background-color: #FFEAAE;
 }
 
 .tag-icon {
@@ -163,7 +210,20 @@ export default {
 
 .shop-address {
 	font-size: 12px;
+  /* background-color: #FFE0E0; */
 	color: #666;
+	display: flex;
+	align-items: center;
+	min-width: 0; /* 允许 flex 子项缩小 */
+}
+
+.first-style .shop-address {
+	background-color: unset;
+}
+
+.first-style .shop-address text {
+	font-size: 12px;
+	color: #FFDC81;
 	display: flex;
 	align-items: center;
 	min-width: 0; /* 允许 flex 子项缩小 */
@@ -174,12 +234,14 @@ export default {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	flex: 1; /* 让文本占据剩余空间 */
+  
 }
 
 .map-pointer-icon {
   width:14px;
   height:14px;
   margin-right: 4px;
+  color: #FF5756;
 }
 
 .first-style .shop-address {
@@ -191,15 +253,16 @@ export default {
 }
 
 .shop-directions {
-	font-size: 12px;
+	font-size: 10px;
 	color: #999;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+  margin-left: 16px;
 }
 
 .first-style .shop-directions {
-	color: rgba(255, 255, 255, 0.7);
+	color: #FFDC81;
 }
 
 .shop-actions {
@@ -221,8 +284,10 @@ export default {
 }
 
 .first-style .action-btn {
-	background-color: rgba(255, 255, 255, 0.15);
-	color: #FFF;
+	/* background-color: rgba(255, 255, 255, 0.15); */
+	/* color: #FFF; */
+  color: #784600;
+  background-color: #FFDC81;
 }
 
 .action-icon {
